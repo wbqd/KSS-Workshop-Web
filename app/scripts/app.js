@@ -16,7 +16,9 @@ angular
     'ngMessages',
     'ngResource',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'ngMaterial',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -25,10 +27,30 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/registration', {
+        templateUrl: 'views/registration.html',
+        controller: 'RegistrationCtrl',
+        controllerAs: 'registration'
+      })
+      .when('/program', {
+        templateUrl: 'views/program.html',
+        controller: 'ProgramCtrl',
+        controllerAs: 'program'
+      })
+      .when('/venue', {
+        templateUrl: 'views/venue.html',
+        controller: 'VenueCtrl',
+        controllerAs: 'venue'
+      })
+      .when('/exhibits', {
+        templateUrl: 'views/exhibits.html',
+        controller: 'ExhibitsCtrl',
+        controllerAs: 'exhibits'
+      })
+      .when('/paper', {
+        templateUrl: 'views/paper.html',
+        controller: 'PaperCtrl',
+        controllerAs: 'paper'
       })
       .otherwise({
         redirectTo: '/'
