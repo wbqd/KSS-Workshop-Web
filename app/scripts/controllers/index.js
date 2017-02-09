@@ -9,8 +9,9 @@
  */
 angular.module('simWorkshop2017App')
   .controller('IndexCtrl', function ($scope, $mdSidenav, sideNavMenu) {
-    $scope.openLeftMenu = function() {
-      $mdSidenav('left').toggle();
-    };
     $scope.menu = sideNavMenu;
+
+    $scope.toggleSidenav = function(menuId) {
+      $mdSidenav(menuId).toggle();
+    };
   });

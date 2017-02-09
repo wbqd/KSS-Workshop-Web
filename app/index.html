@@ -23,42 +23,64 @@
       }
     </style>
   </head>
-  <body ng-app="simWorkshop2017App">
+  <body ng-app="simWorkshop2017App" ng-controller="IndexCtrl" layout="row">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
 
-            <a class="navbar-brand" href="#!/">simWorkshop2017</a>
-          </div>
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-sm')"
+        md-whiteframe="4">
 
-          <div class="collapse">
+      <header>
+        <a class="apps-logo" href="#">
+          <img src="./images/temp_logo.png" alt="">
+        </a>
+      </header>
+      <md-divider></md-divider>
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#!/">Home</a></li>
-              <li><a ng-href="#!/about">About</a></li>
-              <li><a ng-href="#!/">Contact</a></li>
-            </ul>
-          </div>
+      <md-content
+          layout-wrap>
+
+        <md-list>
+          <md-list-item
+              class="md-1-line"
+              ng-repeat="item in menu"
+              md-ink-ripple>
+
+            <md-icon>{{item.icon}}</md-icon>
+            <div class="md-list-item-text">
+              <span class="md-body-2">{{item.title}}</span>
+            </div>
+            <span flex></span>
+          </md-list-item>
+        </md-list>
+      </md-content>
+
+    </md-sidenav>
+
+    <section layout="column" flex>
+
+      <md-toolbar md-whiteframe="4">
+        <div class="md-toolbar-tools">
+          <md-button
+            class="md-icon-button"
+            hide-gt-sm
+            ng-click="toggleSidenav('left')">
+            <md-icon>menu</md-icon>
+          </md-button>
+          <span class="md-headline" hide-xs>한국시뮬레이션학회 춘계공동학술대회</span>
+          <span class="md-title mobile-title" hide-gt-xs>한국시뮬레이션학회 춘계공동학술대회</span>
         </div>
-      </div>
-    </div>
+      </md-toolbar>
 
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
+      <div ng-view></div>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
+    </section>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -80,6 +102,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/services/sidenavmenu.js"></script>
         <!-- endbuild -->
 </body>
 </html>
