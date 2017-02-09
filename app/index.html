@@ -50,7 +50,8 @@
           <md-list-item
               class="md-1-line"
               ng-repeat="item in menu"
-              md-ink-ripple>
+              md-ink-ripple
+              ng-click="routeAndClose('left', item.url)">
 
             <md-icon>{{item.icon}}</md-icon>
             <div class="md-list-item-text">
@@ -100,9 +101,12 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/index.js"></script>
         <script src="scripts/services/sidenavmenu.js"></script>
+        <script src="scripts/controllers/registration.js"></script>
+        <script src="scripts/controllers/program.js"></script>
+        <script src="scripts/controllers/venue.js"></script>
+        <script src="scripts/controllers/exhibits.js"></script>
         <!-- endbuild -->
 </body>
 </html>

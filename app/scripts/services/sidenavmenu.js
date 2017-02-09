@@ -10,18 +10,33 @@
 angular.module('simWorkshop2017App')
   .constant('sideNavMenu', [
     {
-      url: '#!/home',
+      url: '/',
       title: 'Home',
-      icon: 'home'
-    },
-    {
-      url: '#!/registration',
+      icon: 'dashboard'
+    }
+    ,{
+      url: '/registration',
       title: 'Registration',
-      icon: 'date_range'
-    },
-    {
-      url: '#!/paper',
+      icon: 'move_to_inbox'
+    }
+    ,{
+      url: '/paper',
       title: 'Paper Submission',
-      icon: 'announcement'
+      icon: 'send'
+    }
+    ,{
+      url: '/program',
+      title: 'Program',
+      icon: 'event'
+    }
+    ,{
+      url: '/venue',
+      title: 'Venue',
+      icon: 'map'
+    }
+    ,{
+      url: '/exhibits',
+      title: 'Exhibits',
+      icon: 'local_activity'
     }
   ]);
