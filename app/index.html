@@ -1,76 +1,113 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="simWorkshop2017App">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <style type="text/css">
+    /**
+     * Hide when Angular is not yet loaded and initialized
+     */
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="simWorkshop2017App" ng-controller="IndexCtrl" layout="row">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+<!-- Add your site or application content here -->
 
-            <a class="navbar-brand" href="#!/">simWorkshop2017</a>
-          </div>
+<md-sidenav
+  class="md-sidenav-left"
+  md-component-id="left"
+  md-is-locked-open="$mdMedia('gt-sm')"
+  md-whiteframe="4">
 
-          <div class="collapse">
+  <header>
+    <a class="apps-logo" href="#">
+      <img src="./images/temp_logo.png" alt="">
+    </a>
+  </header>
+  <md-divider></md-divider>
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#!/">Home</a></li>
-              <li><a ng-href="#!/about">About</a></li>
-              <li><a ng-href="#!/">Contact</a></li>
-            </ul>
-          </div>
+  <md-content
+    layout-wrap>
+
+    <md-list>
+      <md-list-item
+        class="md-1-line"
+        ng-repeat="item in menu"
+        ng-click="routeAndClose('left', item.url)">
+
+        <md-icon>{{item.icon}}</md-icon>
+        <div class="md-list-item-text">
+          <span class="md-body-2">{{item.title}}</span>
         </div>
-      </div>
+        <span flex></span>
+      </md-list-item>
+    </md-list>
+  </md-content>
+
+</md-sidenav>
+
+<section layout="column" flex>
+
+  <md-toolbar md-whiteframe="4">
+    <div class="md-toolbar-tools">
+      <md-button
+        class="md-icon-button"
+        hide-gt-sm
+        ng-click="toggleSidenav('left')">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <span class="md-headline" hide-xs>한국시뮬레이션학회 춘계공동학술대회</span>
+      <span class="md-title mobile-title" hide-gt-xs>한국시뮬레이션학회 춘계공동학술대회</span>
     </div>
+  </md-toolbar>
 
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
+  <div ng-view></div>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+</section>
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/firebase/firebase.js"></script>
-    <script src="bower_components/angularfire/dist/angularfire.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/index.js"></script>
+<script src="scripts/services/sidenavmenu.js"></script>
+<script src="scripts/controllers/registration.js"></script>
+<script src="scripts/controllers/program.js"></script>
+<script src="scripts/controllers/venue.js"></script>
+<script src="scripts/controllers/exhibits.js"></script>
+<script src="scripts/controllers/paper.js"></script>
+<!-- endbuild -->
 </body>
 </html>

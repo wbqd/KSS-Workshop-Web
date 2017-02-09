@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name simWorkshop2017App.controller:AboutCtrl
+ * @name simWorkshop2017App.controller:PaperCtrl
  * @description
- * # AboutCtrl
+ * # PaperCtrl
  * Controller of the simWorkshop2017App
  */
 angular.module('simWorkshop2017App')
-  .controller('AboutCtrl', function () {
+  .controller('PaperCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
