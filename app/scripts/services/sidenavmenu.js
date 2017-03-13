@@ -20,6 +20,11 @@ angular.module('simWorkshop2017App')
       icon: 'move_to_inbox'
     }
     ,{
+      url: '/myroute',
+      title: 'Registration',
+      icon: 'move_to_inbox'
+    }
+    ,{
       url: '/paper',
       title: 'Paper Submission',
       icon: 'send'

@@ -52,6 +52,11 @@ angular
         controller: 'PaperCtrl',
         controllerAs: 'paper'
       })
+      .when('/myroute', {
+        templateUrl: 'views/myroute.html',
+        controller: 'MyrouteCtrl',
+        controllerAs: 'myroute'
+      })
       .otherwise({
         redirectTo: '/'
       });
