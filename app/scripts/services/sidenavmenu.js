@@ -15,29 +15,9 @@ angular.module('simWorkshop2017App')
       icon: 'dashboard'
     }
     ,{
-      url: '/registration',
-      title: 'Registration',
-      icon: 'move_to_inbox'
-    }
-    ,{
-      url: '/myroute',
-      title: 'Registration',
-      icon: 'move_to_inbox'
-    }
-    ,{
-      url: '/paper',
-      title: 'Paper Submission',
-      icon: 'send'
-    }
-    ,{
       url: '/program',
       title: 'Program',
       icon: 'event'
-    }
-    ,{
-      url: '/venue',
-      title: 'Venue',
-      icon: 'map'
     }
     ,{
       url: '/exhibits',
